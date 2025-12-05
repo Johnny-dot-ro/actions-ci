@@ -1,0 +1,19 @@
+name: test.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04 [Beta]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 #v5.0.0
+
+      - name: Install Packages
+        run: npm i
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test
