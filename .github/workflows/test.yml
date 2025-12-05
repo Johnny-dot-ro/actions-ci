@@ -9,8 +9,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 #v5.0.0
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
       - name: Install Packages
-        run: npm i
+        run: npm ci
 
       - name: Lint
         run: npm run lint
