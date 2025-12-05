@@ -137,7 +137,7 @@ function InfiniteScroll() {
     //scroll to top of table when sorting changes
     const handleSortingChange: OnChangeFn<SortingState> = updater => {
         setSorting(updater)
-        if (!!table.getRowModel().rows.length) {
+        if (table.getRowModel().rows.length > 0) {
             rowVirtualizer.scrollToIndex?.(0)
         }
     }

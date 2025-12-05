@@ -875,7 +875,7 @@ const columns = [
 ]
 
 const Listing = () => {
-    const [data, _setData] = React.useState(() => [...defaultData])
+    const [data] = React.useState(() => [...defaultData])
     const rerender = React.useReducer(() => ({}), {})[1]
 
     const table = useReactTable({
